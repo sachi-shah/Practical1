@@ -22,4 +22,36 @@ function App() {
   );
 }
 
+function App2(){
+  const date = new Date();
+   const abc = <h1>{ date.toLocaleTimeString() }
+   </h1>;
+
+   return abc;
+ 
+}
 export default App;
+
+
+
+// setInterval( App2,1000);
+
+
+
+////   render() {
+//     return (      
+//        <BrowserRouter>
+//         <div>
+//           <Navigation />
+//             {/* <Switch> */}
+//              <Route path="/" component={Home} exact/>
+//              <Route path="/about" component={About}/>
+//              <Route path="/contact" component={Contact}/>
+            
+//            {/* </Switch> */}
+//         </div> 
+//       </BrowserRouter>
+//     );
+//   }
+
+
