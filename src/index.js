@@ -1,25 +1,30 @@
-// import React, { Component } from 'react';
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import TestError from './TestError';
-
-function update(){
-
+// import App from './App';
+import {ThemeProvider} from './theme-context.js'
+// import Shopping from './shoppingList';
+import MagicShop from './magicshop_useffect';
 
 ReactDOM.render(
   <React.StrictMode>
-          <TestError/>
+    <ThemeProvider>
+          <MagicShop/>
+    </ThemeProvider>
+          
   </React.StrictMode>,
   document.getElementById('root')
  
 );
-}
+
+// function update(){
+
+// }
 
 
 
-setInterval( update ,1000);
+// setInterval( update ,1000);
 
 reportWebVitals();
 

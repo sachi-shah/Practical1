@@ -1,10 +1,22 @@
+import React, {Component} from "react";
 import logo from './logo.svg';
 import './App.css';
+import {ThemeContext} from './theme-context'
 
 function App() {
+  // const {theme, toggle, dark} = React.useContext(ThemeContext)
   return (
     <div className="App">
-      <header className="App-header">
+             <header className="App-header"
+                    // style = { {backgroundColor: theme.backgroundColor,
+                    //           color: theme.color}}
+                              >
+
+        {/* <button type="button" onClick = {toggle} 
+        style = { {backgroundColor: theme.backgroundColor,color: theme.color}}>
+            Click here to toggle to {!dark ? 'dark' : 'light'} theme
+        </button> */}
+        
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save .
@@ -17,20 +29,23 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
+      </header> 
+      </div>
   );
 }
 
-function App2(){
-  const date = new Date();
-   const abc = <h1>{ date.toLocaleTimeString() }
-   </h1>;
-
-   return abc;
- 
-}
 export default App;
+
+ 
+
+// function App2(){
+//   const date = new Date();
+//    const abc = <h1>{ date.toLocaleTimeString() }
+//    </h1>;
+
+//    return abc;
+// }
+
 
 
 
