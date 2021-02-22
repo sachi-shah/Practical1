@@ -1,24 +1,17 @@
 import React, { useState } from "react";
-
 const MagicShop = () => {
   const [products, setProducts] = useState([
     { id: 1, name: "Haunted Mirror", inventory: 1, price: 5.00 },
-    {
-      id: 2,
-      name: "Mastering Magic: Madame Maude's Meanderings",
-      inventory: 372,
-      price: 17.50
-    },
+    { id: 2, name: "Mastering Magic: Madame Maude's Meanderings", inventory: 372, price: 17.50 },
     { id: 3, name: "Black Cat Shampoo", inventory: 127, price: 2.75 }
   ]);
   const updateInventory = id => {
     setProducts(
-      products.map(product =>
+      products.map(product => 
         product.id === id
           ? { ...product, inventory: (product.inventory - 1) }
           : product
-      )
-    );
+      ) );
   };
   return (
     <main>

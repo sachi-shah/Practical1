@@ -1,3 +1,5 @@
+// used class
+
 import React, { Component } from "react";
 class MagicShop extends Component {
   constructor(props) {

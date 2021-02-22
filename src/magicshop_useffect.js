@@ -1,49 +1,33 @@
 import React, { useEffect, useState } from "react";
-
-const MagicShop = () => {
+const MagicShop_UseEffect = () => {
   const [products, setProducts] = useState([]);
-  const [query, setQuery] = useState("");
-
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(
-        `https://www.laramiesmagicalemporium.com/api/v1/products${
-          query ? "?query=" + query : ""
-        }`
+      const data = await fetch( `https://jsonplaceholder.typicode.com/users`
       ).then(response => response.json());
-
-      setProducts(data.results);
+      alert(JSON.stringify(data));
+      setProducts(data);
     };
-
     fetchData();
-  }, [query]);
-
-  const handleChange = event => setQuery(event.target.value);
-
+  }, []);
+  const handleChange = event => setProducts(['prod1']);
   return (
     <main>
       <h1>Laramie's Magical Emporium</h1>
-
       <section>
         <h2>Goods for Sale</h2>
-
         <label htmlFor="product-search-query">Search</label>
-        <input
-          id="product-search-query"
-          onChange={handleChange}
-          value={query}
-        />
-
+        <input id="product-search-query" onChange={handleChange} value='Search List' />
         {products.map(product => (
           <article key={product.id}>
             <h3>{product.name}</h3>
-            Price: {product.price} € <br />
-            {product.inventory} in stock
+            Price: {product.id} € <br />
+            {product.id} in stock
           </article>
         ))}
       </section>
     </main>
   );
 };
+export default MagicShop_UseEffect;
 
-export default MagicShop;

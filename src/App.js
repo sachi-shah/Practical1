@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import logo from './logo.svg';
 import './App.css';
-import {ThemeContext} from './theme-context'
+// import {ThemeContext} from './theme-context'
 
 function App() {
   // const {theme, toggle, dark} = React.useContext(ThemeContext)

@@ -12,7 +12,6 @@ class Square extends Component
     );
   }
 }
-
 class Board extends Component{
   renderSquareButton(value)
   {
@@ -30,7 +29,6 @@ class Board extends Component{
     );
   } 
 }
-
 export default Board;
 
 

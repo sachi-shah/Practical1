@@ -10,19 +10,15 @@ class Image extends Component
   {
     return(
         <div>
-            <img src={this.props.value[0]} alt="places" height="200px" width="400px" 
-              onClick = 
-              { () => { this.setState({value: 'clicked'}) }
-              }/>
+          <img src={this.props.value[0]} alt="places" height="200px" width="400px" 
+              onClick =  { () => { this.setState({value: 'clicked'}) } }/>
           <p>{this.state.value}</p>
         </div>
       ); }
 }
 class Board extends Component{
   renderButton(value)
-  {
-    return <Image value={value} />;
-  }
+  {  return <Image value={value} />; }
   render()
   {
     return(
@@ -32,8 +28,7 @@ class Board extends Component{
         {this.renderButton(["https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"])}
       </div>
     );
-  } 
-}
+  } }
 export default Board;
 
 

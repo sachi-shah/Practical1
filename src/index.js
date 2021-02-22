@@ -3,20 +3,97 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 // import App from './App';
-import {ThemeProvider} from './theme-context.js'
-// import Shopping from './shoppingList';
-import MagicShop from './magicshop_useffect';
+// import {ThemeProvider} from './theme-context.js'
+import {BrowserRouter, Route, Switch, Link} 
+from 'react-router-dom';
+import { render } from '@testing-library/react';
+
+
+class navLinks extends React.Component{
+  render(){
+    return (
+  <div>
+    <Link to = "/">Home</Link>
+    <Link to = "/about">About us</Link>
+
+  </div>
+    );
+  }
+}
+
+
+
+class Home extends React.Component{
+  render(){
+    return(
+    <div>
+      <navLinks/>
+      <marquee>
+        we are into the home page
+      </marquee>
+    </div>
+        )
+
+  }
+}
+
+class About extends React.Component{
+  render(){
+    return(
+    <div>
+      
+      
+      <marquee>
+        we are into the about page
+      </marquee>
+    </div>
+        )
+
+  }
+}
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider>
-          <MagicShop/>
-    </ThemeProvider>
-          
-  </React.StrictMode>,
-  document.getElementById('root')
- 
+    
+ <BrowserRouter>
+<Switch>
+    <Route path = "/" component={Home}/>
+    <Route path = "/about" component={About}/>
+  </Switch>
+  </BrowserRouter>,
+document.getElementById('root')
 );
+
+
+
+
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     {/* <ThemeProvider> */}
+//           <App/>
+//           <About/>
+//     {/* </ThemeProvider> */}
+          
+//   </React.StrictMode>,
+//   document.getElementById('root')
+ 
+// );
+
+
+
+
+
+
+
+reportWebVitals();
+
+
+
+
+
+
+
 
 // function update(){
 
@@ -26,7 +103,6 @@ ReactDOM.render(
 
 // setInterval( update ,1000);
 
-reportWebVitals();
 
 // class App2 extends Component {
 //   render(){
